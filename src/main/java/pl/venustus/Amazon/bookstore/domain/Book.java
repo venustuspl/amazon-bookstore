@@ -6,7 +6,10 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,7 +21,9 @@ public class Book {
 
     String name;
 
-    String author;
-
     BigDecimal price;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    Author author;
 }

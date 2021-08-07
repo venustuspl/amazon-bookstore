@@ -6,6 +6,9 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +21,7 @@ public class Author {
     String name;
 
     String lastName;
+
+    @OneToMany
+    List<Book> bookList;
 }
