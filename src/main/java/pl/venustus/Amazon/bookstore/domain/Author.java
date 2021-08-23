@@ -18,6 +18,6 @@ public class Author {
     private long id;
     private String name;
     private String lastName;
-    @OneToMany
+    @OneToMany(mappedBy = "author")
     List<Book> bookList;
 }
