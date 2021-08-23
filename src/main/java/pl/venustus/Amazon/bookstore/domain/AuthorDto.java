@@ -1,23 +1,19 @@
 package pl.venustus.Amazon.bookstore.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @ToString
-@Entity
-public class Author {
-    @Id
+public class AuthorDto {
     private long id;
     private String name;
     private String lastName;
-    @OneToMany
-    List<Book> bookList;
+    private List<Book> bookList;
 }
