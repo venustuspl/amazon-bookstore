@@ -13,11 +13,13 @@ import java.util.Map;
 @Entity
 public class Stock {
     @Id
-    long id;
-
-    String address;
-
-    @OneToMany
-    @JoinColumn(name = "book_id")
-    Map<Integer, Book> bookMap;
+    @GeneratedValue
+    private long id;
+    private String address;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "stock_book_mapping",
+            joinColumns = {@JoinColumn(name = "stock_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")})
+    @MapKey(name = "bookName")
+    private Map<Integer, Book> bookMap;
 }
