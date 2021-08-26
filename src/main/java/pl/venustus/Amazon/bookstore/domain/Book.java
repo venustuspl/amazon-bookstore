@@ -13,10 +13,10 @@ import java.math.BigDecimal;
 @Entity
 public class Book {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_id")
     private long id;
-    @Column(name = "name")
-    private String bookName;
+    private String name;
     private BigDecimal price;
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)

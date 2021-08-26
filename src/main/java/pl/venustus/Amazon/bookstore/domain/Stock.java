@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Map;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,13 +13,11 @@ import java.util.Map;
 @Entity
 public class Stock {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "stock_id")
     private long id;
     private String address;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "stock_book_mapping",
-            joinColumns = {@JoinColumn(name = "stock_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")})
-    @MapKey(name = "bookName")
-    private Map<Integer, Book> bookMap;
+    @OneToMany
+    @JoinColumn(name = "book_id")
+    private List<Book> bookList;
 }
