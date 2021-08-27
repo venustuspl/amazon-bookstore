@@ -1,19 +1,17 @@
-package pl.venustus.Amazon.bookstore.domain;
+package pl.venustus.Amazon.bookstore.domain.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @ToString
-public class AuthorDto {
-    private long id;
+public class BookDto {
+    private String id;
     private String name;
-    private String lastName;
-    private List<Book> bookList;
+    private String price;
+    private String authorId;
 }
