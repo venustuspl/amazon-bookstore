@@ -22,11 +22,11 @@ public class BookService {
     }
 
     @Transactional
-    public void deletebook(Book book) {
+    public void deleteBook(Book book) {
         bookRepository.delete(book);
     }
 
-    public Book updatebook(Book book) {
+    public Book updateBook(Book book) {
         Book bookForUpdate = getBookById(book.getId());
         bookForUpdate.setName(book.getName());
         bookForUpdate.setAuthor(book.getAuthor());
