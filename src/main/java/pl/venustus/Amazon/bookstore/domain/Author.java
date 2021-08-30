@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Entity
+@Entity(name = "AUTHOR")
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

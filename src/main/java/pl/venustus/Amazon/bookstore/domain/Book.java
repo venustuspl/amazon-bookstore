@@ -7,10 +7,18 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+
+@NamedQueries({
+        @NamedQuery(name = "Book.FindAllExpensiveBooks",
+                query = "FROM BOOK WHERE PRICE > 100"),
+        @NamedQuery(name = "Book.FindAllCheapBooks",
+                query = "FROM BOOK WHERE PRICE <= 100")
+})
+
 @Getter
 @Setter
 @ToString
-@Entity
+@Entity(name = "BOOK")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
