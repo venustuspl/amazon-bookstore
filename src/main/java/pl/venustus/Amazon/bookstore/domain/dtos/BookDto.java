@@ -1,13 +1,11 @@
 package pl.venustus.Amazon.bookstore.domain.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class BookDto {
     private String id;

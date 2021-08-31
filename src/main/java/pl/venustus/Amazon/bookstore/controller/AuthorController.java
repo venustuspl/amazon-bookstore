@@ -13,7 +13,7 @@ import pl.venustus.Amazon.bookstore.service.AuthorService;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/authors")
+@RequestMapping("/author")
 public class AuthorController {
     private final AuthorService authorService;
 
